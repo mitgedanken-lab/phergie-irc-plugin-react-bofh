@@ -13,8 +13,8 @@ namespace Phergie\Irc\Plugin\React\BOFH;
 use Phergie\Irc\Bot\React\AbstractPlugin;
 use Phergie\Irc\Bot\React\EventQueueInterface as Queue;
 use Phergie\Irc\Plugin\React\Command\CommandEventInterface as Event;
-use WyriHaximus\Phergie\Plugin\Http\Request;
-use WyriHaximus\Phergie\Plugin\Url\Url;
+use Phergie\Plugin\Http\Request;
+use Phergie\Irc\Plugin\React\Url\Url;
 
 /**
  * Plugin class.
