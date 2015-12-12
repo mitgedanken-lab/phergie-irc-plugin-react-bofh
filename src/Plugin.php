@@ -15,6 +15,7 @@ use Phergie\Irc\Bot\React\EventQueueInterface as Queue;
 use Phergie\Irc\Plugin\React\Command\CommandEventInterface as Event;
 use Phergie\Plugin\Http\Request;
 use Phergie\Irc\Plugin\React\Url\Url;
+use GuzzleHttp\Message\Response;
 
 /**
  * Plugin class.
@@ -83,10 +84,10 @@ class Plugin extends AbstractPlugin
         $request = new Request([
             'url' => $url,
             'resolveCallback' =>
-                function ($data, $headers, $code) use ($event, $queue) {
-
+                function (Response $response) use ($url, $event, $queue) {
+                    $code = $response->getStatusCode();
                     $dom = new \DOMDocument();
-                    $dom->loadHTML($data);
+                    $dom->loadHTML($response->getBody());
                     $xpath = new \DOMXpath($dom);
                     // XPath to the excuse text
                     $result = $xpath->query('/html/body/center/font[2]');
