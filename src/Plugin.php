@@ -21,7 +21,7 @@ use GuzzleHttp\Message\Response;
  * Plugin class.
  *
  * @category Phergie
- * @package Phergie\Irc\Plugin\React\BOFH
+ * @package phergie/phergie-irc-plugin-react-bofh
  */
 class Plugin extends AbstractPlugin
 {
