@@ -40,7 +40,7 @@ class Plugin extends AbstractPlugin
     }
 
     /**
-     *
+     *  Return subscribed events
      *
      * @return array
      */
@@ -52,10 +52,11 @@ class Plugin extends AbstractPlugin
         ];
     }
 
-    /*
-    * @param \Phergie\Irc\Plugin\React\Command\CommandEventInterface $event
-    * @param \Phergie\Irc\Bot\React\EventQueueInterface $queue
-    */
+    /**
+     * Process the command
+     * @param Event $event
+     * @param Queue $queue
+     */
     public function handleBofhCommand(Event $event, Queue $queue)
     {
         $this->getLogger()->info('[BOFH] received a new command');
@@ -63,10 +64,11 @@ class Plugin extends AbstractPlugin
         $this->fetchExcuse($event, $queue);
     }
 
-    /*
-    * @param \Phergie\Irc\Plugin\React\Command\CommandEventInterface $event
-    * @param \Phergie\Irc\Bot\React\EventQueueInterface $queue
-    */
+    /**
+     * Process the help command
+     * @param Event $event
+     * @param Queue $queue
+     */
     public function handleBofhHelpCommand(Event $event, Queue $queue)
     {
         $messages = [
@@ -77,6 +79,11 @@ class Plugin extends AbstractPlugin
         }
     }
 
+    /**
+     * Fetch the URL and parse an excuse
+     * @param $event
+     * @param $queue
+     */
     public function fetchExcuse($event, $queue)
     {
         $url = 'http://pages.cs.wisc.edu/~ballard/bofh/bofhserver.pl';
