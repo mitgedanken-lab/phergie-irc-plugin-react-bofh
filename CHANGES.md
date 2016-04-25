@@ -1,5 +1,10 @@
 # CHANGES
 
+## 3.0.x
+
+* b809c88 - Joe Ferguson - composer update
+* b9f92bf - Joe Ferguson - update license file name
+
 ## 3.0.0
 
 * 694c744 - Joe Ferguson - Merge pull request #1 from phergie/phergie-version2
